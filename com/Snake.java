@@ -3,15 +3,41 @@ import java.util.Random;
 public class Snake {
 
 	public static void main(String[] args) {
-		 //Initializing the position variable
+		   //Intializing the position variable
         int position = 0;
-        //Using storer array to prin it later
+
         String[] storer={"One" ,"Two", "Three" ,"Four","Five","Six"};
         Random dice = new Random();
-        //Generating a random value to match the dice
+        //generating the dice value
+        int displayer = dice.nextInt(6);
+        System.out.println(storer[displayer]);
+
+        //generating the random value to play options
+        int ladder_or_snake = dice.nextInt(3);
         int roll = dice.nextInt(6);
-        //printing the respective dice value
-        System.out.println(storer[roll]);
+        switch (ladder_or_snake) {
+                //Noplay case
+                case 0:
+                        System.out.println("No play");
+                        System.out.println(position);
+                break;
+                //Ladder case
+                case 1:
+                        System.out.println("Ladder");
+                        position += roll;
+                        System.out.println(position);
+                break;
+                //snake case
+                case 2:
+                        System.out.println("Snake");
+                        position -= roll;
+                        System.out.println(position);
+                break;
+
+                default :
+                break;
+        }
+
 	}
 
 }
