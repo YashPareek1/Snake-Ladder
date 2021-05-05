@@ -1,12 +1,17 @@
 package com;
-
+import java.util.Random;
 public class Snake {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		 // Initializing the position variable
+		 //Initializing the position variable
         int position = 0;
-
+        //Using storer array to prin it later
+        String[] storer={"One" ,"Two", "Three" ,"Four","Five","Six"};
+        Random dice = new Random();
+        //Generating a random value to match the dice
+        int roll = dice.nextInt(6);
+        //printing the respective dice value
+        System.out.println(storer[roll]);
 	}
 
 }
